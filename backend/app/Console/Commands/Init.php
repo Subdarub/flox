@@ -26,20 +26,30 @@
 
     private function fillDatabaseCredentials()
     {
-      $value = $this->ask('Enter your Database Name', $this->argument("database"));
-      $this->changeENV('DB_DATABASE', $value);
+      $this->changeENV('DB_DATABASE', getenv('F_DB_DATABASE') );
 
-      $value = $this->ask('Enter your Database Username', $this->argument("username"));
-      $this->changeENV('DB_USERNAME', $value);
+      $this->changeENV('DB_USERNAME',getenv('F_DB_USERNAME') ) ;
 
-      $value = $this->ask('Enter your Database Password', $this->argument("password"));
-      $this->changeENV('DB_PASSWORD', $value);
+      $this->changeENV('DB_PASSWORD',getenv('F_DB_PASSWORD') );
 
-      $value = $this->ask('Enter your Database Hostname', $this->argument("hostname"));
-      $this->changeENV('DB_HOST', $value);
+      $this->changeENV('DB_HOST',getenv('F_DB_HOST') );
 
-      $value = $this->ask('Enter your Database Port', $this->argument("port"));
-      $this->changeENV('DB_PORT', $value);
+      $this->changeENV('DB_PORT',getenv('F_DB_PORT') );
+
+      $this->changeENV('TMDB_API_KEY',getenv('F_TMDB_API_KEY') );
+      
+      $this->changeENV('TRANSLATION',getenv('F_TRANSLATION') ) ;
+      
+      $this->changeENV('CLIENT_URI',getenv('F_CLIENT_URI') );
+      
+      $this->changeENV('TIMEZONE',getenv('F_TIMEZONE') );
+      
+      $this->changeENV('DB_CONNECTION',getenv('F_DB_CONNECTION') );
+      
+      $this->changeENV('APP_KEY',getenv('F_APP_KEY') );
+      
+      
+
     }
 
     private function setAppKey()
